@@ -26,4 +26,9 @@ public class FrcTeam extends Team{
     public double getAdjustedScore(){
         return totalPoints-foulPoints;
     }
+
+    public String getFullSummary(){
+        String res = super.getFullSummary();
+        return res;
+    }
 }
