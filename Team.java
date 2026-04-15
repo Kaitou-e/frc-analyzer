@@ -18,6 +18,12 @@ public class Team{
     public String getCity(){return city;}
     public String getStateProv(){return stateProv;}
     public String getCountry(){return country;}
+
+    public void setTeamNumber(int n){teamNumber = n;}
+    public void setTeamName(String s){teamName = s;}
+    public void setCity(String s){city = s;}
+    public void setStateProv(String s){stateProv = s;}
+    public void setCountry(String s){country = s;}
     
     public String getBasicSummary(){
         return ("Team " + teamNumber + ", " + teamName);

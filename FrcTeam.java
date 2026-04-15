@@ -19,6 +19,22 @@ public class FrcTeam extends Team{
         rp = rankp;
     }
 
+    public double getOPR(){return opr;}
+    public double getTotalPoints(){return totalPoints;}
+    public double getTotalAutoPoints(){return totalAutoPoints;}
+    public double getTotalTeleopPoints(){return totalTeleopPoints;}
+    public double getEndGameTowerPoints(){return endGameTowerPoints;}
+    public double getFoulPoints(){return foulPoints;}
+    public double getRP(){return rp;}
+
+    public void setTotalPoints(double d){totalPoints = d;}
+    public void setOPR(double d){opr = d;}
+    public void setTotalAutoPoints(double d){totalAutoPoints = d;}
+    public void setTotalTeleopPoints(double d){totalTeleopPoints = d;}
+    public void setEndGameTowerPoints(double d){endGameTowerPoints = d;}
+    public void setFoulPoints(double d){foulPoints = d;}
+    public void setRP(double d){rp = d;}
+
     public double getStrengthScore(){
         return 0;
     }
