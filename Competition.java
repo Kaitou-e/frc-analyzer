@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -82,11 +83,66 @@ public class Competition {
     }
 
     public void printAllTeams(){
+        sortByTeamNumber();
         System.out.println("-------- All teams at " + compName + " --------");
         for (FrcTeam t : teams){
-            System.out.println(t.getTeamNumber() + ": " + t.getTeamName());
+            System.out.println("Team" + t.getTeamNumber() + ": " + t.getTeamName());
         }
     }
 
-    
+    public void printTopTeamsOPR(int n){
+        sortByOPR();
+        n = Math.min(n, teams.size());
+        System.out.println("-------- Top " + n + " teams at " + compName + " by OPR --------");
+        for (int i = 0; i < n; i++){
+            System.out.println("Team " + teams.get(i).getTeamNumber() + ", OPR: " + teams.get(i).getOPR());
+        }
+    }
+
+    public void printTopTeamsOPR(){
+        printTopTeamsOPR(10);
+    }
+
+    public void printTopTeamsTotScore(int n){
+        sortByTotScore();
+        n = Math.min(n, teams.size());
+        System.out.println("-------- Top " + n + " teams at " + compName + " by total points --------");
+        for (int i = 0; i < n; i++){
+            System.out.println("Team " + teams.get(i).getTeamNumber() + ", Total Points: " + teams.get(i).getTotalPoints());
+        }
+    }
+
+    public void printTopTeamsTotScore(){
+        printTopTeamsTotScore(10);
+    }
+
+    public void sortByOPR(){
+        Collections.sort(teams, (o1, o2) -> {
+            FrcTeam a = (FrcTeam) o1;
+            FrcTeam b = (FrcTeam) o2;
+            if (a.getOPR() < b.getOPR()) return -1;
+            if (a.getOPR() > b.getOPR()) return 1;
+            return 0;
+        });
+    }
+
+    public void sortByTotScore(){
+        Collections.sort(teams, (o1, o2) -> {
+            FrcTeam a = (FrcTeam) o1;
+            FrcTeam b = (FrcTeam) o2;
+            if (a.getTotalPoints() < b.getTotalPoints()) return -1;
+            if (a.getTotalPoints() > b.getTotalPoints()) return 1;
+            return 0;
+        });
+    }
+
+    public void sortByTeamNumber(){
+        Collections.sort(teams, (o1, o2) -> {
+            FrcTeam a = (FrcTeam) o1;
+            FrcTeam b = (FrcTeam) o2;
+            if (a.getTeamNumber() < b.getTeamNumber()) return -1;
+            if (a.getTeamNumber() > b.getTeamNumber()) return 1;
+            return 0;
+        });
+    }
 }
