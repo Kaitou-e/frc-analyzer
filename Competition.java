@@ -7,13 +7,15 @@ public class Competition {
     private ArrayList<FrcTeam> teams;
     private String compName;
     public Competition(String cName){
+        teams = new ArrayList<FrcTeam>();
         compName = cName;
     }
 
     public Competition(String cName, String filename){
+        teams = new ArrayList<FrcTeam>();
         compName = cName;
-        this.loadInfoCSV(filename);
-        this.loadPerformanceCSV(filename);
+        this.loadInfoCSV("data/"+filename+"_team_list.csv");
+        this.loadPerformanceCSV("data/"+filename+"_coprs.csv");
     }
 
     public void loadInfoCSV(String filename){
