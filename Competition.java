@@ -96,8 +96,8 @@ public class Competition {
         sortByOPR();
         n = Math.min(n, teams.size());
         System.out.println("-------- Top " + n + " teams at " + compName + " by OPR --------");
-        for (int i = 0; i < n; i++){
-            System.out.println("Team " + teams.get(i).getTeamNumber() + ", OPR: " + teams.get(i).getOPR());
+        for (int i = teams.size()-1; i >= teams.size()-n; i--){
+            System.out.println((teams.size()-i) + ". Team " + teams.get(i).getTeamNumber() + ", OPR: " + teams.get(i).getOPR());
         }
     }
 
@@ -109,8 +109,8 @@ public class Competition {
         sortByTotScore();
         n = Math.min(n, teams.size());
         System.out.println("-------- Top " + n + " teams at " + compName + " by total points --------");
-        for (int i = 0; i < n; i++){
-            System.out.println("Team " + teams.get(i).getTeamNumber() + ", Total Points: " + teams.get(i).getTotalPoints());
+        for (int i = teams.size()-1; i >= teams.size()-n; i--){
+            System.out.println((teams.size()-i) + ". Team " + teams.get(i).getTeamNumber() + ", Total Points: " + teams.get(i).getTotalPoints());
         }
     }
 
