@@ -36,7 +36,7 @@ public class FrcTeam extends Team{
     public void setRP(double d){rp = d;}
 
     public double getStrengthScore(){
-        return 0;
+        return (1.2 * totalAutoPoints) + totalTeleopPoints + (1.1 * endGameTowerPoints);
     }
 
     public double getAdjustedScore(){
