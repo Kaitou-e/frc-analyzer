@@ -88,7 +88,7 @@ public class Competition {
         sortByTeamNumber();
         System.out.println("-------- All teams at " + compName + " --------");
         for (FrcTeam t : teams){
-            System.out.println("Team" + t.getTeamNumber() + ": " + t.getTeamName());
+            System.out.println("Team " + t.getTeamNumber() + ": " + t.getTeamName());
         }
     }
 

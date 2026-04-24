@@ -111,7 +111,6 @@ public class Main {
                     }
                     break;
                 case 2:
-                    competition.sortByTeamNumber();
                     competition.printAllTeams();
                     break;
                 case 3:
@@ -139,19 +138,15 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    competition.sortByOPR();
                     competition.printTopTeamsOPR(10);
                     break;
                 case 2:
-                    competition.sortByTotScore();
                     competition.printTopTeamsTotScore(10);
                     break;
                 case 3:
-                    competition.sortByOPR();
                     competition.printTopTeamsOPR(9999);
                     break;
                 case 4:
-                    competition.sortByTotScore();
                     competition.printTopTeamsTotScore(9999);
                     break;
                 case 5:
